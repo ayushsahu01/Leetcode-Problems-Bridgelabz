@@ -1,0 +1,19 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int d1 = m - 1;
+        int d2 = n - 1;
+        int w = m + n - 1;
+        while(w >= 0){
+            if(d1 >= 0 && d2 >= 0){
+                nums1[w] = nums1[d1] > nums2[d2] ? nums1[d1--] : nums2[d2--];
+            }
+            else if(d1 >= 0){
+                nums1[w] = nums1[d1--];
+            }
+            else {
+                nums1[w] = nums2[d2--];
+            }
+            w--;
+        }
+    }
+}

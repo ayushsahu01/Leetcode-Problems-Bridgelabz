@@ -1,0 +1,19 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+        k = k % nums.length;
+        sol(nums, 0, nums.length - 1);
+        sol(nums, 0, k - 1);
+        sol(nums, k, nums.length - 1);
+    }
+
+    public static void sol(int[] arr, int l, int r) {
+        while (l < r) {
+            int temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+            l++;
+            r--;
+        }
+    }
+
+}
